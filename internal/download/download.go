@@ -21,7 +21,7 @@ import (
 	"github.com/Mrs4s/go-cqhttp/internal/base"
 )
 
-var client = newcli(time.Second * 15)
+var client = newcli(time.Second * 200)
 
 var clienth2 = &http.Client{
 	Transport: &http.Transport{
@@ -34,7 +34,7 @@ var clienth2 = &http.Client{
 		ForceAttemptHTTP2:   true,
 		MaxIdleConnsPerHost: 999,
 	},
-	Timeout: time.Second * 15,
+	Timeout: time.Second * 200,
 }
 
 func newcli(t time.Duration) *http.Client {
